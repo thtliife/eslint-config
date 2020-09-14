@@ -1,15 +1,14 @@
 {
   "name": "@thtliife/eslint-config",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "My eslint config for use with prettier, @babel/core and @babel/eslint-parser",
   "main": "index.js",
   "scripts": {
-    "preinstall": "node ./preinstall.js",
     "postinstall": "node ./postinstall.js"
   },
   "author": "Vito Giarrusso",
   "license": "MIT",
-  "peerDependencies": {
+  "dependencies": {
     "@babel/core": "^7.11.6",
     "@babel/eslint-parser": "^7.11.5",
     "@babel/eslint-plugin": "^7.11.5",

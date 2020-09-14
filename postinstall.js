@@ -1,24 +1,6 @@
 /* eslint-disable no-console */
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
-
-/* install peer dependencies */
-
-exec(
-  'npx install-peerdeps --dev @thtliife/eslint-config',
-  (error, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`);
-      return;
-    }
-    console.log(`stdout: ${stdout}`);
-  }
-);
 
 /* create project config files */
 

@@ -29,7 +29,7 @@ const prettierConfig = `module.exports = {
 const destinationPath = process.env.INIT_CWD;
 const eslintFile = path.resolve(destinationPath, '.eslintrc.js');
 const babelFile = path.resolve(destinationPath, 'babel.config.js');
-const prettierFile = path.resolve(destinationPath, '.prettier.js');
+const prettierFile = path.resolve(destinationPath, '.prettierrc.js');
 
 fs.writeFile(eslintFile, eslintConfig, 'utf8', err => {
   if (err) {

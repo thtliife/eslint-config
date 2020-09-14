@@ -5,6 +5,7 @@ const { exec } = require('child_process');
 
 exec(
   'npx install-peerdeps --dev @thtliife/eslint-config',
+  { cwd: process.env.INIT_CWD },
   (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);

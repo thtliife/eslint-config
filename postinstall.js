@@ -42,12 +42,12 @@ fs.writeFile(babelFile, babelConfig, 'utf8', err => {
   if (err) {
     throw err;
   }
-  console.log(`created '.eslintrc.js' successfully`);
+  console.log(`created 'babel.config.js' successfully`);
 });
 
 fs.writeFile(prettierFile, prettierConfig, 'utf8', err => {
   if (err) {
     throw err;
   }
-  console.log(`created '.eslintrc.js' successfully`);
+  console.log(`created '.prettierrc.js' successfully`);
 });

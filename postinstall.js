@@ -2,10 +2,21 @@
 const fs = require('fs');
 const path = require('path');
 
+const packageJson = require('./package.json');
+
+if (packageJson?.name === '@thtliife/eslint-config') {
+  console.log(
+    `we are in the core '${packageJson.name}' package.\nnothing to do...`
+  );
+  return;
+}
+
 /* create project config files */
 
 const eslintConfig = `module.exports = {
-  extends: ['@thtliife']
+  extends: ['@thtliife${
+    packageJson?.name === 'now' ? '/eslint-config/service-now' : ''
+  }']
 };
 `;
 

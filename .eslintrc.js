@@ -28,7 +28,7 @@ module.exports = {
     'import/core-modules': [],
     'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$']
   },
-  ignorePatterns: [],
+  ignorePatterns: ['**/vendor/*'],
   rules: {
     'new-cap': 'off',
     '@babel/new-cap': [

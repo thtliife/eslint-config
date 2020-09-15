@@ -24,6 +24,6 @@ yarn init -y
 yarn add --dev @thtliife/eslint-config
 ```
 
-Required peer dependencies will be installed as dev dependencies in your project, and linting for prettier, with babel and react should be configured automatically.
+Linting for prettier, with babel and react should then be configured automatically.
 
 Good luck :)

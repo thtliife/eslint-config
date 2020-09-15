@@ -2,7 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const packageJson = require('./package.json');
+// eslint-disable-next-line import/no-dynamic-require
+const packageJson = require(path.resolve(process.env.INIT_CWD, 'package.json'));
 
 if (packageJson?.name === '@thtliife/eslint-config') {
   console.log(

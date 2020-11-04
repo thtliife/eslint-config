@@ -4,7 +4,8 @@
   "description": "My eslint config for use with prettier, @babel/core and @babel/eslint-parser",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node ./postinstall.js"
+    "postinstall": "node ./postinstall.js",
+    "commit": "cz"
   },
   "author": "Vito Giarrusso",
   "license": "MIT",
@@ -16,6 +17,7 @@
     "@babel/plugin-proposal-private-methods": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@thtliife/repo-config": "^1.0.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",

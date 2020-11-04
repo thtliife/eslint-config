@@ -1,10 +1,10 @@
 {
   "name": "@thtliife/eslint-config",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "My eslint config for use with prettier, @babel/core and @babel/eslint-parser",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node ./postinstall.js",
+    "postinstall": "node ./scripts/postinstall.js",
     "commit": "cz"
   },
   "author": "Vito Giarrusso",

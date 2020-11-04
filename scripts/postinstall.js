@@ -46,7 +46,11 @@ if (packageName === '@thtliife/eslint-config.disabled') {
 
 const buildConfig = ({ file, config = {} }) => {
   const prettier = require('prettier');
-  const prettierOptions = require(path.resolve(__dirname, '.prettierrc.js'));
+  const prettierOptions = require(path.resolve(
+    __dirname,
+    '..',
+    '.prettierrc.js'
+  ));
   let fileContent;
 
   try {

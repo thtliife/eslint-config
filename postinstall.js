@@ -1,65 +1,95 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
+/* eslint-disable no-unreachable */
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-console */
 const fs = require('fs');
 const path = require('path');
 
-// eslint-disable-next-line import/no-dynamic-require
-const packageJson = require(path.resolve(process.env.INIT_CWD, 'package.json'));
+const cwd = process.env.INIT_CWD || '';
 
-if (packageJson?.name === '@thtliife/eslint-config') {
+// eslint-disable-next-line import/no-dynamic-require
+const packageJson = require(path.resolve(cwd, 'package.json'));
+const { name: packageName } = packageJson;
+
+const merge = (target, source) => {
+  const isObject = obj => obj && typeof obj === 'object';
+
+  if (!isObject(target) || !isObject(source)) {
+    return source;
+  }
+
+  Object.keys(source).forEach(key => {
+    const targetValue = target[key];
+    const sourceValue = source[key];
+
+    if (Array.isArray(targetValue) && Array.isArray(sourceValue)) {
+      target[key] = targetValue
+        .filter(el => !sourceValue.includes(el))
+        .concat(sourceValue);
+    } else if (isObject(targetValue) && isObject(sourceValue)) {
+      target[key] = merge({ ...targetValue }, sourceValue);
+    } else {
+      target[key] = sourceValue;
+    }
+  });
+
+  return target;
+};
+
+if (packageName === '@thtliife/eslint-config.disabled') {
   console.log(
     `we are in the core '${packageJson.name}' package.\nnothing to do...`
   );
   return;
 }
 
-/* create project config files */
+const buildConfig = ({ file, config = {} }) => {
+  const prettier = require('prettier');
+  const prettierOptions = require(path.resolve(__dirname, '.prettierrc.js'));
+  let fileContent;
 
-const eslintConfig = `module.exports = {
-  extends: ['@thtliife${
-    packageJson?.name === 'now' ? '/eslint-config/service-now' : ''
-  }']
-};
-`;
-
-const babelConfig = `module.exports = {
-  presets: ['@babel/preset-env', '@babel/preset-react'],
-  plugins: [
-    '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-proposal-private-methods'
-  ]
-};
-`;
-
-const prettierConfig = `module.exports = {
-  arrowParens: 'avoid',
-  singleQuote: true,
-  trailingComma: 'none',
-  vueIndentScriptAndStyle: true
-};
-`;
-
-const destinationPath = process.env.INIT_CWD;
-const eslintFile = path.resolve(destinationPath, '.eslintrc.js');
-const babelFile = path.resolve(destinationPath, 'babel.config.js');
-const prettierFile = path.resolve(destinationPath, '.prettierrc.js');
-
-fs.writeFile(eslintFile, eslintConfig, 'utf8', err => {
-  if (err) {
-    throw err;
+  try {
+    fileContent = require(file);
+  } catch {
+    fileContent = {};
   }
-  console.log(`created '.eslintrc.js' successfully`);
-});
+  return prettier.format(
+    `module.exports = ${JSON.stringify(merge(fileContent, config))}`,
+    { ...prettierOptions, parser: 'babel' }
+  );
+};
 
-fs.writeFile(babelFile, babelConfig, 'utf8', err => {
-  if (err) {
-    throw err;
-  }
-  console.log(`created 'babel.config.js' successfully`);
-});
+const eslintOptions = {
+  file: path.resolve(cwd, '.eslintrc.js'),
+  config: { extends: ['@thtliife'] }
+};
 
-fs.writeFile(prettierFile, prettierConfig, 'utf8', err => {
-  if (err) {
-    throw err;
+const babelOptions = {
+  file: path.resolve(cwd, 'babel.config.js'),
+  config: {
+    presets: ['@babel/preset-env', '@babel/preset-react'],
+    plugins: [
+      '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-proposal-private-methods'
+    ]
   }
-  console.log(`created '.prettierrc.js' successfully`);
-});
+};
+
+const prettierOptions = {
+  file: path.resolve(cwd, '.prettierrc.js'),
+  config: {
+    arrowParens: 'avoid',
+    singleQuote: true,
+    trailingComma: 'none',
+    vueIndentScriptAndStyle: true
+  }
+};
+
+[eslintOptions, babelOptions, prettierOptions].forEach(source =>
+  fs.writeFile(source.file, buildConfig(source), 'utf8', err => {
+    if (err) {
+      throw err;
+    }
+  })
+);

@@ -8,9 +8,7 @@ _On install, this will create the following files in your package directory._
 - `.prettierrc.js`
 - `babel.config.js`
 
-**Warning:** If any of these files exist in your project directory, they will be overwritten.
-
-If you still want to continue, install by simply running the following in a new project folder.
+Install by simply running the following in a new project folder.
 
 ```bash
 npm init -y

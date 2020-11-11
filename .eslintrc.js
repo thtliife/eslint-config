@@ -1,29 +1,22 @@
 module.exports = {
-  extends: ['airbnb', 'airbnb/hooks', 'prettier', 'prettier/react'],
-  env: {
-    browser: true,
-    commonjs: true,
-    es2021: true,
-    node: true,
-    es6: true
-  },
+  extends: [
+    'airbnb',
+    'airbnb/hooks',
+    'prettier',
+    'prettier/react',
+    '@thtliife'
+  ],
+  env: { browser: true, commonjs: true, es2021: true, node: true, es6: true },
   globals: {},
   parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: 'module',
-    ecmaFeatures: {
-      impliedStrict: true,
-      jsx: true
-    }
+    ecmaFeatures: { impliedStrict: true, jsx: true }
   },
   plugins: ['import', 'jsx-a11y', 'prettier', 'react', 'react-hooks', '@babel'],
   settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.mjs', '.js', '.json']
-      }
-    },
+    'import/resolver': { node: { extensions: ['.mjs', '.js', '.json'] } },
     'import/extensions': ['.js', '.mjs', '.jsx'],
     'import/core-modules': [],
     'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$']

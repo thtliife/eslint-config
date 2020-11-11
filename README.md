@@ -11,17 +11,12 @@ _On install, this will create the following files in your package directory._
 Install by simply running the following in a new project folder.
 
 ```bash
-npm init -y
-npm install --save-dev @thtliife/eslint-config
+pnpm init -y
+# peer dependencies that you will need for everything to work
+pnpm add --save-dev @babel/core @babel/eslint-parser @babel/eslint-plugin @babel/plugin-proposal-class-properties @babel/plugin-proposal-private-methods @babel/preset-env @babel/preset-react eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier
+pnpm add --save-dev @thtliife/eslint-config
 ```
 
-or alternatively if you prefer the `yarn` package manager:
-
-```bash
-yarn init -y
-yarn add --dev @thtliife/eslint-config
-```
-
-Linting for prettier, with babel and react should then be configured automatically.
+Linting for prettier, with babel and react should then be configured for you.
 
 Good luck :)

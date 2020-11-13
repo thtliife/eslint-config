@@ -17,10 +17,14 @@ If you still want to continue, install by simply running the following in a new 
 ```bash
 # Initialise a new project (Optional)
 pnpm init -y
+```
 
-# Install Peer Dependencies:
-pnpm add --save-dev @babel/{core,eslint-parser,eslint-plugin,plugin-proposal-{class-properties,private-methods},preset-env,preset-react} eslint{,-config-{airbnb,prettier},-plugin-{import,jsx-a11y,prettier,react,react-hooks}} prettier
+```bash
+# Install peer dependencies
+pnpx install-peerdeps --dev @thtliife/eslint-config
+```
 
+```bash
 # Install repo-config
 pnpm add --save-dev @thtliife/repo-config
 ```

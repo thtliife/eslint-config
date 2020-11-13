@@ -19,7 +19,7 @@
     "@babel/preset-env": "7.x",
     "@babel/preset-react": "7.x",
     "eslint": "7.x",
-    "eslint-config-airbnb": "18x",
+    "eslint-config-airbnb": "18.x",
     "eslint-config-prettier": "6.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",

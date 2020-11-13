@@ -37,7 +37,7 @@ const merge = (target, source) => {
   return target;
 };
 
-if (packageName === '@thtliife/eslint-config.disabled') {
+if (packageName === '@thtliife/eslint-configa') {
   console.log(
     `we are in the core '${packageJson.name}' package.\nnothing to do...`
   );
@@ -45,12 +45,6 @@ if (packageName === '@thtliife/eslint-config.disabled') {
 }
 
 const buildConfig = ({ file, config = {} }) => {
-  const prettier = require('prettier');
-  const prettierOptions = require(path.resolve(
-    __dirname,
-    '..',
-    '.prettierrc.js'
-  ));
   let fileContent;
 
   try {
@@ -58,10 +52,7 @@ const buildConfig = ({ file, config = {} }) => {
   } catch {
     fileContent = {};
   }
-  return prettier.format(
-    `module.exports = ${JSON.stringify(merge(fileContent, config))}`,
-    { ...prettierOptions, parser: 'babel' }
-  );
+  return `module.exports = ${JSON.stringify(merge(fileContent, config))}`;
 };
 
 const eslintOptions = {

@@ -1,6 +1,6 @@
 {
   "name": "@thtliife/eslint-config",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "My eslint config for use with prettier, @babel/core and @babel/eslint-parser",
   "main": "index.js",
   "scripts": {

@@ -6,7 +6,11 @@ devDependencies:
   '@babel/plugin-proposal-private-methods': 7.12.1_@babel+core@7.12.3
   '@babel/preset-env': 7.12.1_@babel+core@7.12.3
   '@babel/preset-react': 7.12.5_@babel+core@7.12.3
-  '@thtliife/repo-config': 1.0.0
+  '@commitlint/cli': 11.0.0
+  '@commitlint/config-conventional': 11.0.0
+  '@thtliife/repo-config': 1.0.4_e6ae3456ec762c5345e58494160acf99
+  commitiquette: 1.0.8_afc8d047de440c3eb7ecb998406a74b0
+  commitizen: 4.2.2
   eslint: 7.13.0
   eslint-config-airbnb: 18.2.1_559cfe39880d0fbaea7606f9ad99374d
   eslint-config-prettier: 6.15.0_eslint@7.13.0
@@ -1243,17 +1247,21 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-XRUeBZ5zBWLYgSANMpThFddrZZkEbGHgUdt5UJjZfnlN9BGCiUBrf+nvbRupSjMvqzwnQN0qwCmOxITt1cfywA==
-  /@thtliife/repo-config/1.0.0:
+  /@thtliife/repo-config/1.0.4_e6ae3456ec762c5345e58494160acf99:
     dependencies:
       '@commitlint/cli': 11.0.0
       '@commitlint/config-conventional': 11.0.0
       commitiquette: 1.0.8_afc8d047de440c3eb7ecb998406a74b0
       commitizen: 4.2.2
-      cross-spawn: 7.0.3
     dev: true
+    peerDependencies:
+      '@commitlint/cli': 11.x
+      '@commitlint/config-conventional': 11.x
+      commitiquette: 1.x
+      commitizen: 4.x
     requiresBuild: true
     resolution:
-      integrity: sha512-pB0lzPFmPc/I+HT9TqcsKVkR4QYnwcHnAwYydoUWWZzXnk87I1U0aeBXXO6PUa3ZHsqaCHZh4wPZsVSAtFTy9Q==
+      integrity: sha512-z5EEj2cbbKXbxkIHTozACH6C8Rz0N7Bm9xKvt3yJnDgZQrwcRmpZx/TjoSP6s4DS8GcTJPDkqpE6ittPPmu/pA==
   /@types/json5/0.0.29:
     dev: true
     resolution:
@@ -3401,7 +3409,7 @@ packages:
       read-pkg-up: 7.0.1
       redent: 3.0.0
       trim-newlines: 3.0.0
-      type-fest: 0.18.0
+      type-fest: 0.18.1
       yargs-parser: 20.2.4
     dev: true
     engines:
@@ -4605,12 +4613,12 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==
-  /type-fest/0.18.0:
+  /type-fest/0.18.1:
     dev: true
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-fbDukFPnJBdn2eZ3RR+5mK2slHLFd6gYHY7jna1KWWy4Yr4XysHuCdXRzy+RiG/HwG4WJat00vdC2UHky5eKiQ==
+      integrity: sha512-OIAYXk8+ISY+qTOwkHtKqzAuxchoMiD9Udx+FSGQDuiRR+PJKJHc2NJAXlbhkGwTt/4/nKZxELY1w3ReWOL8mw==
   /type-fest/0.6.0:
     dev: true
     engines:
@@ -4841,7 +4849,11 @@ specifiers:
   '@babel/plugin-proposal-private-methods': ^7.12.1
   '@babel/preset-env': ^7.12.1
   '@babel/preset-react': ^7.12.5
-  '@thtliife/repo-config': 1.0.0
+  '@commitlint/cli': ^11.0.0
+  '@commitlint/config-conventional': ^11.0.0
+  '@thtliife/repo-config': 1.0.4
+  commitiquette: ^1.0.8
+  commitizen: ^4.2.2
   eslint: ^7.13.0
   eslint-config-airbnb: ^18.2.1
   eslint-config-prettier: ^6.15.0

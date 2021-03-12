@@ -46,7 +46,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
-    "@thtliife/repo-config": "^1.0.7",
+    "@thtliife/repo-config": "^1.0.8",
     "commitiquette": "^1.0.9",
     "commitizen": "^4.2.3",
     "standard-version": "^9.1.1"

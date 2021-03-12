@@ -2,58 +2,6 @@
   "name": "@thtliife/eslint-config",
   "version": "1.0.22",
   "description": "My eslint config for use with prettier, @babel/core and @babel/eslint-parser",
-  "main": "index.js",
-  "scripts": {
-    "postinstall": "node ./scripts/postinstall.js",
-    "commit": "cz"
-  },
-  "author": "Vito Giarrusso",
-  "license": "MIT",
-  "peerDependencies": {
-    "@babel/core": "7.x",
-    "@babel/eslint-parser": "7.x",
-    "@babel/eslint-plugin": "7.x",
-    "@babel/plugin-proposal-class-properties": "7.x",
-    "@babel/plugin-proposal-private-methods": "7.x",
-    "@babel/preset-env": "7.x",
-    "@babel/preset-react": "7.x",
-    "eslint": "7.x",
-    "eslint-config-airbnb": "18.x",
-    "eslint-config-prettier": "7.x",
-    "eslint-plugin-import": "2.x",
-    "eslint-plugin-jsx-a11y": "6.x",
-    "eslint-plugin-prettier": "3.x",
-    "eslint-plugin-react": "7.x",
-    "eslint-plugin-react-hooks": "4.x",
-    "prettier": "2.x"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/eslint-parser": "^7.12.1",
-    "@babel/eslint-plugin": "^7.12.1",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-proposal-private-methods": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/preset-react": "^7.12.5",
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "@thtliife/repo-config": "1.0.4",
-    "commitiquette": "^1.0.8",
-    "commitizen": "^4.2.2",
-    "eslint": "^7.13.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.1.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thtliife/eslint-config.git"
-  },
   "keywords": [
     "eslint",
     "prettier",
@@ -61,8 +9,44 @@
     "lint",
     "opinionated"
   ],
+  "homepage": "https://github.com/thtliife/eslint-config#readme",
   "bugs": {
     "url": "https://github.com/thtliife/eslint-config/issues"
   },
-  "homepage": "https://github.com/thtliife/eslint-config#readme"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thtliife/eslint-config.git"
+  },
+  "license": "MIT",
+  "author": "Vito Giarrusso",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js",
+    "commit": "cz"
+  },
+  "dependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/eslint-parser": "^7.13.10",
+    "@babel/eslint-plugin": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-private-methods": "^7.13.0",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@thtliife/repo-config": "^1.0.7",
+    "commitiquette": "^1.0.9",
+    "commitizen": "^4.2.3"
+  }
 }

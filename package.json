@@ -22,7 +22,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "node ./scripts/postinstall.js",
-    "commit": "cz"
+    "commit": "cz",
+    "release": "standard-version"
   },
   "dependencies": {
     "@babel/core": "^7.13.10",
@@ -47,6 +48,7 @@
     "@commitlint/config-conventional": "^12.0.1",
     "@thtliife/repo-config": "^1.0.7",
     "commitiquette": "^1.0.9",
-    "commitizen": "^4.2.3"
+    "commitizen": "^4.2.3",
+    "standard-version": "^9.1.1"
   }
 }

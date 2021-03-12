@@ -1,6 +1,12 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+### [2.0.1](https://github.com/thtliife/eslint-config/compare/v2.0.0...v2.0.1) (2021-03-12)
+
+
+### Others
+
+* **deps:** bump repo-config to latest ([7978963](https://github.com/thtliife/eslint-config/commit/7978963688c608d6f343a4ebb7deadc307a8a75d))
 
 ## 2.0.0 (2021-03-12)
 
